@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" class="is-load-before is-splash-before">
+
+
+
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Last-Modified" content="Wed, 20 Oct 2021 01:39:03">
+<title>Project</title>
+<link rel="stylesheet" href="./project.css">
+<script src="./project.js"></script>
+<style type="text/css">
+    @font-face {
+	font-family: 'i';
+	src: url('https://theshift.tokyo/wp-content/themes/the-shift/assets/fonts/icon/i.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block
+}
+
+@font-face {
+	font-family: 'YakuHanJP';
+	src: url('https://theshift.tokyo/wp-content/themes/the-shift/assets/fonts/YakuHanJP/YakuHanJP-DemiLight.woff2') format("woff2");
+	unicode-range: U+3001-3002, U+3008-3011, U+3014-3015, U+30fb, U+ff01, U+ff08-ff09, U+ff1a-ff1b, U+ff1f, U+ff3b, U+ff3d, U+ff5b, U+ff5d;
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap
+}
+
+@font-face {
+	font-family: 'gallery';
+	src: url('https://theshift.tokyo/wp-content/themes/the-shift/assets/fonts/gallery/Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap
+}
+
+@font-face {
+	font-family: 'lausanne';
+	src: url('https://theshift.tokyo/wp-content/themes/the-shift/assets/fonts/lausanne/150.woff2') format('woff2');
+	font-weight: 150;
+	font-style: normal;
+	font-display: swap
+}
+
+@font-face {
+	font-family: 'everett';
+	src: url('https://theshift.tokyo/wp-content/themes/the-shift/assets/fonts/everett/Light.woff2') format('woff2');
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap
+}
+
+@font-face {
+	font-family: 'everett';
+	src: url('https://theshift.tokyo/wp-content/themes/the-shift/assets/fonts/everett/Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap
+}
+
+:root {
+	--gw: 4.16666667vw;
+	--col-font-black: rgba(20, 20, 20, 1);
+	--col-black: rgba(20, 20, 20, 1);
+	--col-white: rgba(240, 240, 240, 1);
+	--col-l-gray: rgba(230, 230, 230, 1);
+	--col-d-gray: rgba(50, 50, 50, 1);
+	--col-orange: rgba(254, 66, 73, 1)
+}
+
+[data-theme="light"]:root {
+	--col-font-black: rgba(245, 245, 245, 1);
+	--col-white: rgba(5, 5, 5, 1);
+	--col-black: rgba(245, 245, 245, 1);
+	--col-l-gray: rgba(230, 230, 230, 1);
+	--col-d-gray: rgba(50, 50, 50, 1)
+}
+
+@media (min-width:1024px) {
+	.is-load-before .site-window {
+		opacity: 0
+	}
+	.fadein {
+		visibility: hidden;
+		opacity: 0
+	}
+}
+</style>
+
+</head>
+<body x-init="init()">
+<header class="site-header"><a href="../index.html" data-to="home" class="site-name flip js-put-navi-a" @mouseenter="ui.onEnter" @mouseleave="ui.onLeave" data-c="a"><h1 class="fadein"><div class="o"><div class="t">LOGO TEXT</div></div></h1></a><nav class="site-navi js-css" @mouseenter="styleMenu.onEnter()" @mouseleave="styleMenu.onLeave()"><div class="site-navi-origin fadein in">
+<div class="site-navi-head js-css f-s" @click.prevent="styleMenu.onToggle()"><a href="#"><div class="ui-btn-link"><div class="o"><div class="t">MENU</div></div></div></a></div>
+<div class="site-navi-body js-css">
+<ul class="site-navi-ul flip">
+<!-- <li><a data-to="home" href="../index.html" class="js-put-navi-a"><div class="in"> -->
+<div class="u js-css"><div></div></div>
+<div class="o"><div class="t js-css"><div class="w">Home</div></div></div>
+</div></a></li>
+<li><a data-to="archive-project" href="index.html" class="js-put-navi-a"><div class="in">
+<div class="u js-css"><div></div></div>
+<div class="o"><div class="t js-css"><div class="w">Project</div></div></div>
+</div></a></li>
+<!-- <li><a data-to="archive-research" href="#" class="js-put-navi-a"><div class="in"> -->
+<div class="u js-css"><div></div></div>
+<div class="o"><div class="t js-css"><div class="w">Research</div></div></div>
+</div></a></li>
+<!-- <li><a data-to="about" href="#" class="js-put-navi-a"><div class="in"> -->
+<div class="u js-css"><div></div></div>
+<div class="o"><div class="t js-css"><div class="w">About</div></div></div>
+</div></a></li>
+</ul>
+<ul class="site-navi-lang js-css flip">
+<li class="ui-lang-a" @click.prevent="__LANG__.onToggle" data-to="en"><a href="index.html" class="ui-btn-link ui-btn-link-re js-put-lang-en"><div class="o"><div class="t">EN</div></div></a></li>
+<li class="ui-lang-a" @click.prevent="__LANG__.onToggle" data-to="ja"><a href="https://theshift.tokyo/project/" class="ui-btn-link ui-btn-link-re js-put-lang-ja"><div class="o"><div class="t">JA</div></div></a></li>
+</ul>
+</div>
+<div class="site-navi-bg js-css"><div></div></div>
+</div></nav></header><script>const init = () => {};</script><main class="site-window" id="top"><div class="page-content" data-xhr="wrapper"><div class="page-origin" data-en="/en/project/" data-ja="/project/" data-current-lang="en" data-page-theme="dark" data-xhr="container" data-page-type="archive" data-xhr-namespace="archive-project">
+<div class="slide-scroll-wrap js-h js-inview" data-n="1">
+<div class="site-lang ui-lang-a js-inview" data-to="ja" @click.prevent="__LANG__.onToggle" @mouseenter="ui.onEnter" @mouseleave="ui.onLeave" data-c="a"><a href="https://theshift.tokyo/project/"><div class="ui-btn-link fadein"><div class="o"><div class="t">JA</div></div></div></a></div>
+<div class="slide-scroll js-h" data-n="1"><div class="slide-scroll-body js-h" data-n="1"><div class="slide-scroll-contents js-h" data-n="1">
+<article class="slide-plane flip-origin even" data-powx="0.8" data-powy="0.5" data-index="1" data-post-id="580"><div class="in">
+<div class="slide-a"><a href="#" class="slide-in in"><div class="slide-plane-title"><div data-disable="any" class="js-delay-n flip-b">
+<div class="l odd"><div class="w"><div class="o" data-d="0"><div class="t"> PROJECT</div></div></div></div>
+<div class="l even"><div class="w"><div class="o" data-d="1"><div class="t"> ONE </div></div></div></div>
+</div></div>
+<div class="ui-btn-arrow"> <div class="o"> <div class="i i-arrow-right"></div> <div class="b"></div> </div> </div></a></div>
+<div class="slide-plane-parts clip slide-plane-y"><div class="o"><div class="t js-css">2021</div></div></div>
+<h2 class="slide-plane-parts clip slide-plane-t"><div class="o"><div class="t js-css">
+<div class="parentheses">
+<div class="s">(</div>
+<div class="n">01</div>
+<div class="s">)</div>
+</div>
+<div class="w">Project One</div>
+</div></div></h2>
+</div></article><article class="slide-plane flip-origin odd" data-powx="0.8" data-powy="0.5" data-index="2" data-post-id="192"><div class="in">
+<div class="slide-a"><a href="#" class="slide-in in"><div class="slide-plane-title"><div data-disable="any" class="js-delay-n flip-b">
+    <div class="l odd"><div class="w"><div class="o" data-d="0"><div class="t"> PROJECT </div></div></div></div>
+    <div class="l even"><div class="w"><div class="o" data-d="1"><div class="t"> TWO </div></div></div></div>
+    </div></div>
+<div class="ui-btn-arrow"> <div class="o"> <div class="i i-arrow-right"></div> <div class="b"></div> </div> </div></a></div>
+<div class="slide-plane-parts clip slide-plane-y"><div class="o"><div class="t js-css">2021</div></div></div>
+<h2 class="slide-plane-parts clip slide-plane-t"><div class="o"><div class="t js-css">
+<div class="parentheses">
+<div class="s">(</div>
+<div class="n">02</div>
+<div class="s">)</div>
+</div>
+<div class="w">Project Two</div>
+</div></div></h2>
+</div></article><article class="slide-plane flip-origin even" data-powx="0.8" data-powy="0.5" data-index="3" data-post-id="193"><div class="in">
+<div class="slide-a"><a href="#" class="slide-in in"><div class="slide-plane-title"><div data-disable="any" class="js-delay-n flip-b">
+<div class="l odd"><div class="w"><div class="o" data-d="0"><div class="t"> PROJECT </div></div></div></div>
+<div class="l even"><div class="w"><div class="o" data-d="1"><div class="t"> THREE </div></div></div></div>
+</div></div>
+<div class="ui-btn-arrow"> <div class="o"> <div class="i i-arrow-right"></div> <div class="b"></div> </div> </div></a></div>
+<div class="slide-plane-parts clip slide-plane-y"><div class="o"><div class="t js-css">2021</div></div></div>
+<h2 class="slide-plane-parts clip slide-plane-t"><div class="o"><div class="t js-css">
+<div class="parentheses">
+<div class="s">(</div>
+<div class="n">03</div>
+<div class="s">)</div>
+</div>
+<div class="w">Project Three</div>
+</div></div></h2>
+</div></article><article class="slide-plane flip-origin odd" data-powx="0.8" data-powy="0.5" data-index="4" data-post-id="484"><div class="in">
+<div class="slide-a"><a href="#" class="slide-in in"><div class="slide-plane-title"><div data-disable="any" class="js-delay-n flip-b">
+<div class="l odd"><div class="w"><div class="o" data-d="0"><div class="t"> PROJECT </div></div></div></div>
+<div class="l even"><div class="w"><div class="o" data-d="1"><div class="t"> FOUR </div></div></div></div>
+</div></div>
+<div class="ui-btn-arrow"> <div class="o"> <div class="i i-arrow-right"></div> <div class="b"></div> </div> </div></a></div>
+<div class="slide-plane-parts clip slide-plane-y"><div class="o"><div class="t js-css">2021</div></div></div>
+<h2 class="slide-plane-parts clip slide-plane-t"><div class="o"><div class="t js-css">
+<div class="parentheses">
+<div class="s">(</div>
+<div class="n">04</div>
+<div class="s">)</div>
+</div>
+<div class="w">Project Four</div>
+</div></div></h2>
+</div></article><article class="slide-plane flip-origin even" data-powx="0.8" data-powy="0.5" data-index="5" data-post-id="604"><div class="in">
+<div class="slide-a"><a href="#" class="slide-in in"><div class="slide-plane-title"><div data-disable="any" class="js-delay-n flip-b">
+<div class="l odd"><div class="w"><div class="o" data-d="0"><div class="t"> PROJECT </div></div></div></div>
+<div class="l even"><div class="w"><div class="o" data-d="1"><div class="t"> FIVE </div></div></div></div>
+</div></div>
+<div class="ui-btn-arrow"> <div class="o"> <div class="i i-arrow-right"></div> <div class="b"></div> </div> </div></a></div>
+<div class="slide-plane-parts clip slide-plane-y"><div class="o"><div class="t js-css">2021</div></div></div>
+<h2 class="slide-plane-parts clip slide-plane-t"><div class="o"><div class="t js-css">
+<div class="parentheses">
+<div class="s">(</div>
+<div class="n">05</div>
+<div class="s">)</div>
+</div>
+<div class="w">Project Five</div>
+</div></div></h2>
+</div></article><article class="slide-plane flip-origin odd" data-powx="0.8" data-powy="0.5" data-index="6" data-post-id="496"><div class="in">
+<div class="slide-a"><a href="#" class="slide-in in"><div class="slide-plane-title"><div data-disable="any" class="js-delay-n flip-b">
+<div class="l odd"><div class="w"><div class="o" data-d="0"><div class="t"> PROJECT </div></div></div></div>
+<div class="l even"><div class="w"><div class="o" data-d="1"><div class="t"> SIX </div></div></div></div>
+</div></div>
+<div class="ui-btn-arrow"> <div class="o"> <div class="i i-arrow-right"></div> <div class="b"></div> </div> </div></a></div>
+<div class="slide-plane-parts clip slide-plane-y"><div class="o"><div class="t js-css">2021</div></div></div>
+<h2 class="slide-plane-parts clip slide-plane-t"><div class="o"><div class="t js-css">
+<div class="parentheses">
+<div class="s">(</div>
+<div class="n">06</div>
+<div class="s">)</div>
+</div>
+<div class="w">Project Six</div>
+</div></div></h2>
+</div></article><article class="slide-plane flip-origin even" data-powx="0.8" data-powy="0.5" data-index="7" data-post-id="189"><div class="in">
+<div class="slide-a"><a href="#" class="slide-in in"><div class="slide-plane-title"><div data-disable="any" class="js-delay-n flip-b">
+<div class="l odd"><div class="w"><div class="o" data-d="0"><div class="t"> PROJECT </div></div></div></div>
+<div class="l even"><div class="w"><div class="o" data-d="1"><div class="t"> SEVEN </div></div></div></div>
+</div></div>
+<div class="ui-btn-arrow"> <div class="o"> <div class="i i-arrow-right"></div> <div class="b"></div> </div> </div></a></div>
+<div class="slide-plane-parts clip slide-plane-y"><div class="o"><div class="t js-css">2021</div></div></div>
+<h2 class="slide-plane-parts clip slide-plane-t"><div class="o"><div class="t js-css">
+<div class="parentheses">
+<div class="s">(</div>
+<div class="n">07</div>
+<div class="s">)</div>
+</div>
+<div class="w">Project Seven</div>
+</div></div></h2>
+</div></article><article class="slide-plane flip-origin odd" data-powx="0.8" data-powy="0.5" data-index="8" data-post-id="184"><div class="in">
+<div class="slide-a"><a href="#" class="slide-in in"><div class="slide-plane-title"><div data-disable="any" class="js-delay-n flip-b">
+<div class="l odd"><div class="w"><div class="o" data-d="0"><div class="t"> PROJECT </div></div></div></div>
+<div class="l even"><div class="w"><div class="o" data-d="1"><div class="t"> EIGHT </div></div></div></div>
+</div></div>
+<div class="ui-btn-arrow"> <div class="o"> <div class="i i-arrow-right"></div> <div class="b"></div> </div> </div></a></div>
+<div class="slide-plane-parts clip slide-plane-y"><div class="o"><div class="t js-css">2021</div></div></div>
+<h2 class="slide-plane-parts clip slide-plane-t"><div class="o"><div class="t js-css">
+<div class="parentheses">
+<div class="s">(</div>
+<div class="n">08</div>
+<div class="s">)</div>
+</div>
+<div class="w">Project Eight</div>
+</div></div></h2>
+</div></article><article class="slide-plane flip-origin even" data-powx="0.8" data-powy="0.5" data-index="9" data-post-id="183"><div class="in">
+<div class="slide-a"><a href="#" class="slide-in in"><div class="slide-plane-title"><div data-disable="any" class="js-delay-n flip-b">
+<div class="l odd"><div class="w"><div class="o" data-d="0"><div class="t"> PROJECT </div></div></div></div>
+<div class="l even"><div class="w"><div class="o" data-d="1"><div class="t"> NINE </div></div></div></div>
+</div></div>
+<div class="ui-btn-arrow"> <div class="o"> <div class="i i-arrow-right"></div> <div class="b"></div> </div> </div></a></div>
+<div class="slide-plane-parts clip slide-plane-y"><div class="o"><div class="t js-css">2021</div></div></div>
+<h2 class="slide-plane-parts clip slide-plane-t"><div class="o"><div class="t js-css">
+<div class="parentheses">
+<div class="s">(</div>
+<div class="n">09</div>
+<div class="s">)</div>
+</div>
+<div class="w">Project NINE</div>
+</div></div></h2>
+</div></article><article class="slide-plane flip-origin odd" data-powx="0.8" data-powy="0.5" data-index="10" data-post-id="557"><div class="in">
+<div class="slide-a"><a href="#" class="slide-in in"><div class="slide-plane-title"><div data-disable="any" class="js-delay-n flip-b">
+<div class="l odd"><div class="w"><div class="o" data-d="0"><div class="t"> PROJECT </div></div></div></div>
+<div class="l even"><div class="w"><div class="o" data-d="1"><div class="t"> TEN </div></div></div></div>
+</div></div>
+<div class="ui-btn-arrow"> <div class="o"> <div class="i i-arrow-right"></div> <div class="b"></div> </div> </div></a></div>
+<div class="slide-plane-parts clip slide-plane-y"><div class="o"><div class="t js-css">2021</div></div></div>
+<h2 class="slide-plane-parts clip slide-plane-t"><div class="o"><div class="t js-css">
+<div class="parentheses">
+<div class="s">(</div>
+<div class="n">10</div>
+<div class="s">)</div>
+</div>
+<div class="w">Project Ten</div>
+</div></div></h2>
+</div></article>
+</div></div></div>
+<div class="slide-scroll-control"><div class="in">
+<div class="slide-scroll-map">
+<div class="slide-scroll-map-li"><div><div></div></div></div>
+<div class="slide-scroll-map-li"><div><div></div></div></div>
+<div class="slide-scroll-map-li"><div><div></div></div></div>
+<div class="slide-scroll-map-li"><div><div></div></div></div>
+<div class="slide-scroll-map-li"><div><div></div></div></div>
+<div class="slide-scroll-map-li"><div><div></div></div></div>
+<div class="slide-scroll-map-li"><div><div></div></div></div>
+<div class="slide-scroll-map-li"><div><div></div></div></div>
+<div class="slide-scroll-map-li"><div><div></div></div></div>
+<div class="slide-scroll-map-li"><div><div></div></div></div>
+</div>
+<div class="slide-scroll-thumb">
+<div class="pivot before"></div>
+<div class="pivot after"></div>
+</div>
+</div></div>
+<div class="parts parts-t1 f-xxs"><div class="flip2"><div class="o"><div class="t"><div class="parentheses">
+<div class="s">(</div>
+<div class="n slide-scroll-progress">00</div>
+<div class="s">)</div>
+</div></div></div></div></div>
+<div class="parts parts-b4 f-xxs"><div class="flip2"><div class="o"><div class="t"><div class="parentheses">
+<div class="s">(</div>
+<div class="n">DRAG</div>
+<div class="s">)</div>
+</div></div></div></div></div>
+</div>
+<ul class="get-global-navi">
+<li> <a data-to="home" href="../index.html" class="js-get-navi-a">Home</a> </li> <li> <a data-to="archive-project" href="index.html" class="js-get-navi-a">Project</a> </li> <li> <a data-to="archive-research" href="../research/index.html" class="js-get-navi-a">Research</a> </li> <li> <a data-to="about" href="../about/index.html" class="js-get-navi-a">About</a> </li> </ul>
+</div></div></main><div class="ui-cursor"><div class="ui-cursor-body clip">
+<div class="ui-cursor-text" data-c="drag"><div class="in"><div class="o"><div class="t">Drag</div></div></div></div>
+<div class="ui-cursor-text" data-c="click"><div class="in"><div class="o"><div class="t">Click</div></div></div></div>
+<div class="ui-cursor-text" data-c="explore"><div class="in"><div class="o"><div class="t">Explore</div></div></div></div>
+<div class="ui-cursor-text" data-c="next"><div class="in"><div class="o"><div class="t">Next</div></div></div></div>
+<div class="ui-cursor-text" data-c="copy"><div class="in">
+<div class="o"><div class="t"><div>Copy an email address</div></div></div>
+<div class="o"><div class="t"><div>Copied</div></div></div>
+</div></div>
+<div class="ui-cursor-bg"><div class="b"></div></div>
+</div></div>
+<div class="site-footer"><div class="js-scroll-height"></div></div>
+<div class="site-mask"></div>
+<div class="alert" aria-hidden="true">
+<div class="alert-body alert-brows">We are sorry, your browser version is not supported.</div>
+<div class="alert-body alert-noscript">For full functionality of this site it is necessary to enable JavaScript. Here are the <a href="https://www.enable-javascript.com/" rel="noopener" target="_blank">instructions how to enable JavaScript in your web browser</a>.</div>
+</div>
+<noscript>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../wp-content/themes/the-shift/assets/css/prod-loader57c5.css?616f7337952b6">
+<link rel="stylesheet" href="../../wp-content/themes/the-shift/assets/css/prod-noscript5390.css?616f7337952d5">
+</noscript>
+<script defer src="../../wp-content/themes/the-shift/assets/js/prod-loader2309.js?616f7337952f1"></script>
+<script defer src="../../wp-content/themes/the-shift/assets/js/cdn.min.js"></script>
+
+</body>
+
+</html>
